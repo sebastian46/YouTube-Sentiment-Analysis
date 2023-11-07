@@ -1,9 +1,9 @@
 import os
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import Sequential, load_model
-from tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras.models import Sequential, load_model
+from keras.layers import Dense, Embedding, GlobalAveragePooling1D
+from keras.preprocessing.sequence import pad_sequences
 import pickle
 import pandas as pd
 
@@ -13,7 +13,7 @@ MAX_LEN = 250
 EMBEDDING_DIM = 16
 MODEL_PATH = 'sentiment_analysis_model.h5'
 
-file_path = 'data.csv'
+file_path = './app/data.csv'
 data = pd.read_csv(file_path, encoding='ISO-8859-1')
 df_shuffled = data.sample(frac=1).reset_index(drop=True)
 
